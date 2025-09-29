@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE PANKAYAM - Kayak Rentals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7fafc;
+        }
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .hero-section {
+            background-image: url('1000013750.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); /* Dark overlay for text readability */
+        }
+        .hero-section > * {
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-orange-500 text-white p-4 shadow-lg">
+        <div class="main-container flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold tracking-tight">THE PANKAYAM</a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#rental" class="hover:text-gray-200">Rentals</a>
+                <a href="#pricing" class="hover:text-gray-200">Pricing</a>
+                <a href="#availability" class="hover:text-gray-200">Availability</a>
+                <a href="#hours" class="hover:text-gray-200">Hours</a>
+                <a href="#contact" class="hover:text-gray-200">Contact</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button id="menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-orange-600 text-white shadow-md">
+        <nav class="flex flex-col items-center py-4 space-y-4">
+            <a href="#rental" class="block w-full text-center py-2 hover:bg-orange-500">Rentals</a>
+            <a href="#pricing" class="block w-full text-center py-2 hover:bg-orange-500">Pricing</a>
+            <a href="#availability" class="block w-full text-center py-2 hover:bg-orange-500">Availability</a>
+            <a href="#hours" class="block w-full text-center py-2 hover:bg-orange-500">Hours</a>
+            <a href="#contact" class="block w-full text-center py-2 hover:bg-orange-500">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-white py-20 px-4 text-center">
+        <div class="main-container">
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-4">
+                Explore the Waters with THE PANKAYAM
+            </h1>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8">
+                Your adventure awaits! We provide high-quality kayaks and essential gear for a memorable day on the water.
+            </p>
+            <a href="#rental" class="bg-white text-orange-600 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-200 transition-colors duration-300">
+                Book Your Kayak Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Rental Form Section -->
+    <section id="rental" class="py-16 px-4">
+        <div class="main-container bg-white p-6 md:p-10 rounded-xl shadow-lg">
+            <h2 class="text-3xl font-bold mb-8 text-center text-orange-500">Kayak Rental Booking</h2>
+            <form id="rental-form" class="space-y-6">
+                <!-- Kayak Selection -->
+                <div>
+                    <label for="kayak-count" class="block text-gray-700 font-semibold mb-2">Number of Kayaks</label>
+                    <input type="number" id="kayak-count" name="kayak-count" min="1" max="10" value="1" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-orange-500 focus:border-orange-500">
+                </div>
+                <!-- People Count -->
+                <div>
+                    <label for="people-count" class="block text-gray-700 font-semibold mb-2">Number of People</label>
+                    <input type="number" id="people-count" name="people-count" min="1" max="20" value="1" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-orange-500 focus:border-orange-500">
+                    <p class="text-sm text-gray-500 mt-2">Each person requires a life jacket.</p>
+                </div>
+                <!-- Life Jacket Selection (matches people) -->
+                <div>
+                    <label for="life-jacket-count" class="block text-gray-700 font-semibold mb-2">Number of Life Jackets</label>
+                    <input type="number" id="life-jacket-count" name="life-jacket-count" min="1" max="20" value="1" class="w-full p-3 border border-gray-300 rounded-lg bg-gray-200 cursor-not-allowed" readonly>
+                </div>
+
+                <!-- Rental Time -->
+                <div>
+                    <label for="rental-time" class="block text-gray-700 font-semibold mb-2">Rental Time <span class="text-xs text-gray-500">(between 6:00 AM and 6:00 PM)</span></label>
+                    <input type="datetime-local" id="rental-time" name="rental-time" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-orange-500 focus:border-orange-500">
+                </div>
+
+                <!-- Return Time -->
+                <div>
+                    <label for="return-time" class="block text-gray-700 font-semibold mb-2">Return Time <span class="text-xs text-gray-500">(before 6:00 PM)</span></label>
+                    <input type="date" id="return-time" name="return-time" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-orange-500 focus:border-orange-500">
+                </div>
+
+                <!-- Total Cost -->
+                <div class="p-4 bg-gray-200 rounded-lg text-center">
+                    <p class="font-bold text-lg text-orange-600">Estimated Total Cost</p>
+                    <p class="text-3xl font-bold mt-2" id="total-cost">₹0</p>
+                    <p class="text-sm text-gray-600 mt-1">Based on hourly rate of ₹200 per person</p>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="w-full md:w-auto bg-orange-500 text-white font-bold py-3 px-12 rounded-full shadow-md hover:bg-orange-600 transition-colors duration-300">
+                        Check Availability
+                    </button>
+                </div>
+            </form>
+            <div id="message-box" class="mt-8 hidden p-4 rounded-lg text-center font-semibold"></div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="bg-gray-200 py-16 px-4">
+        <div class="main-container text-center">
+            <h2 class="text-3xl font-bold mb-8 text-orange-500">Our Rental Pricing</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left bg-white rounded-xl shadow-lg table-auto">
+                    <thead>
+                        <tr class="bg-orange-500 text-white rounded-t-xl">
+                            <th class="p-4 rounded-tl-xl">Duration</th>
+                            <th class="p-4">Price per Person</th>
+                            <th class="p-4 rounded-tr-xl">Includes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="p-4">1 Hour</td>
+                            <td class="p-4 font-bold">₹200</td>
+                            <td class="p-4">Kayak, Paddle, Life Jacket</td>
+                        </tr>
+                        <tr class="bg-gray-100">
+                            <td class="p-4">2 Hours</td>
+                            <td class="p-4 font-bold">₹400</td>
+                            <td class="p-4">Kayak, Paddle, Life Jacket</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4">4 Hours (Half Day)</td>
+                            <td class="p-4 font-bold">₹800</td>
+                            <td class="p-4">Kayak, Paddle, Life Jacket</td>
+                        </tr>
+                        <tr class="bg-gray-100">
+                            <td class="p-4">8 Hours (Full Day)</td>
+                            <td class="p-4 font-bold">₹1600</td>
+                            <td class="p-4">Kayak, Paddle, Life Jacket</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-sm text-gray-600 mt-4">
+                All prices are in Indian Rupees (₹) and include one kayak, paddle, and life jacket. Pricing is per person.
+            </p>
+        </div>
+    </section>
+
+    <!-- Availability Section -->
+    <section id="availability" class="py-16 px-4">
+        <div class="main-container text-center">
+            <h2 class="text-3xl font-bold mb-4 text-orange-500">Current Availability</h2>
+            <p class="text-lg text-gray-700 mb-8">
+                Check our real-time stock to plan your perfect day.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-4 text-orange-500">Available Kayaks</h3>
+                    <p class="text-5xl font-bold text-gray-800" id="available-kayaks">15</p>
+                    <p class="text-gray-500 mt-2">as of now</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-4 text-orange-500">Life Jackets</h3>
+                    <p class="text-5xl font-bold text-gray-800" id="available-jackets">20</p>
+                    <p class="text-gray-500 mt-2">always in excess for safety</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operating Hours Section -->
+    <section id="hours" class="bg-gray-200 py-16 px-4">
+        <div class="main-container text-center">
+            <h2 class="text-3xl font-bold mb-4 text-orange-500">Our Operating Hours</h2>
+            <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+                We are open every day to provide you with a fantastic kayaking experience.
+            </p>
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg inline-block">
+                <p class="text-4xl font-bold text-gray-800">
+                    6:00 AM - 6:00 PM
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-white py-16 px-4">
+        <div class="main-container p-6 md:p-10 rounded-xl shadow-lg">
+            <h2 class="text-3xl font-bold mb-4 text-center text-orange-500">About THE PANKAYAM</h2>
+            <p class="text-gray-700 leading-relaxed text-lg text-center max-w-3xl mx-auto">
+                Founded with a passion for the water by <span class="font-semibold text-orange-600">Muhammed Nafi</span>, THE PANKAYAM is dedicated to providing safe, affordable, and fun kayak experiences for everyone. Our fleet is regularly maintained, and we prioritize your safety with top-of-the-line life jackets and a commitment to responsible service.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-orange-500 text-white py-16 px-4">
+        <div class="main-container text-center">
+            <h2 class="text-3xl font-bold mb-4">Get in Touch</h2>
+            <p class="text-lg mb-8">
+                Ready to paddle? Contact us for any questions or special requests.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
+                <a href="mailto:info@thepankayam.com" class="flex items-center space-x-2">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2.003 5.884L10 11l7.997-5.116A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                    </svg>
+                    <span>info@thepankayam.com</span>
+                </a>
+                <div class="flex items-center space-x-2">
+                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                    </svg>
+                    <div class="flex flex-col text-left">
+                        <a href="tel:+919961203232">+91 9961203232</a>
+                        <a href="tel:+918547754641">+91 8547754641</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 text-center">
+        <div class="main-container">
+            <p>&copy; 2025 THE PANKAYAM. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const rentalForm = document.getElementById('rental-form');
+            const kayakCountInput = document.getElementById('kayak-count');
+            const peopleCountInput = document.getElementById('people-count');
+            const lifeJacketCountInput = document.getElementById('life-jacket-count');
+            const rentalTimeInput = document.getElementById('rental-time');
+            const returnTimeInput = document.getElementById('return-time');
+            const totalCostDisplay = document.getElementById('total-cost');
+            const messageBox = document.getElementById('message-box');
+
+            // Toggle mobile menu visibility
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Sync life jacket count with people count
+            peopleCountInput.addEventListener('input', (e) => {
+                lifeJacketCountInput.value = e.target.value;
+                updateTotalCost();
+            });
+            
+            // Sync kayak count with people count to ensure people don't exceed kayak capacity
+            kayakCountInput.addEventListener('input', () => {
+                updateTotalCost();
+            });
+
+            rentalTimeInput.addEventListener('input', updateTotalCost);
+            returnTimeInput.addEventListener('input', updateTotalCost);
+            
+            function updateTotalCost() {
+                const rentalTime = rentalTimeInput.value;
+                const returnTime = returnTimeInput.value;
+                const peopleCount = parseInt(peopleCountInput.value) || 0;
+                
+                if (rentalTime && returnTime) {
+                    const rentalDate = new Date(rentalTime);
+                    const returnDate = new Date(returnTime);
+                    const diffInMs = returnDate - rentalDate;
+                    const diffInHours = diffInMs / (1000 * 60 * 60);
+
+                    if (diffInHours > 0) {
+                        const totalCost = Math.ceil(diffInHours) * peopleCount * 200;
+                        totalCostDisplay.textContent = ₹${totalCost};
+                    } else {
+                        totalCostDisplay.textContent = "₹0";
+                    }
+                } else {
+                    totalCostDisplay.textContent = "₹0";
+                }
+            }
+            
+            // Handle form submission
+            rentalForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const rentalTime = rentalTimeInput.value;
+                const returnTime = returnTimeInput.value;
+                const kayakCount = parseInt(kayakCountInput.value);
+                const peopleCount = parseInt(peopleCountInput.value);
+
+                if (!rentalTime || !returnTime || peopleCount < 1 || kayakCount < 1) {
+                    messageBox.textContent = "Please fill out all fields and select at least one kayak and one person.";
+                    messageBox.className = "mt-8 p-4 bg-red-100 text-red-700 rounded-lg text-center font-semibold block";
+                    messageBox.scrollIntoView({ behavior: 'smooth' });
+                    return;
+                }
+
+                const rentalDate = new Date(rentalTime);
+                const returnDate = new Date(returnTime);
+                const rentalHour = rentalDate.getHours();
+                const returnHour = returnDate.getHours();
+
+                if (rentalHour < 6 || rentalHour >= 18) {
+                     messageBox.textContent = "Rental time must be between 6:00 AM and 6:00 PM.";
+                     messageBox.className = "mt-8 p-4 bg-red-100 text-red-700 rounded-lg text-center font-semibold block";
+                     messageBox.scrollIntoView({ behavior: 'smooth' });
+                     return;
+                }
+                
+                if (returnHour > 18 || (returnHour === 18 && returnDate.getMinutes() > 0) || (returnDate.getDate() > rentalDate.getDate() && returnDate.getHours() > 6)) {
+                    messageBox.textContent = "Return time must be before 6:00 PM on the same day.";
+                    messageBox.className = "mt-8 p-4 bg-red-100 text-red-700 rounded-lg text-center font-semibold block";
+                    messageBox.scrollIntoView({ behavior: 'smooth' });
+                    return;
+                }
+
+                if (returnDate <= rentalDate) {
+                    messageBox.textContent = "Return time must be after the rental time.";
+                    messageBox.className = "mt-8 p-4 bg-red-100 text-red-700 rounded-lg text-center font-semibold block";
+                    messageBox.scrollIntoView({ behavior: 'smooth' });
+                    return;
+                }
+                
+                const availableKayaks = parseInt(document.getElementById('available-kayaks').textContent);
+                if (kayakCount > availableKayaks) {
+                    messageBox.textContent = Sorry, we only have ${availableKayaks} kayaks available. Please reduce your kayak count.;
+                    messageBox.className = "mt-8 p-4 bg-red-100 text-red-700 rounded-lg text-center font-semibold block";
+                    messageBox.scrollIntoView({ behavior: 'smooth' });
+                    return;
+                }
+
+                const availableJackets = parseInt(document.getElementById('available-jackets').textContent);
+                if (peopleCount > availableJackets) {
+                    messageBox.textContent = Sorry, we only have ${availableJackets} life jackets available. Please reduce your people count.;
+                    messageBox.className = "mt-8 p-4 bg-red-100 text-red-700 rounded-lg text-center font-semibold block";
+                    messageBox.scrollIntoView({ behavior: 'smooth' });
+                    return;
+                }
+
+                // Display success message
+                messageBox.textContent = Success! Your booking for ${peopleCount} people and ${kayakCount} kayaks from ${rentalTime} to ${returnTime} is confirmed. A representative will contact you shortly.;
+                messageBox.className = "mt-8 p-4 bg-green-100 text-green-700 rounded-lg text-center font-semibold block";
+                messageBox.scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            updateTotalCost(); // Initial call to set the cost
+        });
+    </script>
+
+</body>
+</html>
