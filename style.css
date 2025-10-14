@@ -16,7 +16,7 @@ body{
     color: white;
     font-weight: 500;
     margin-left: 25px;
-    font-family: "Noto Sans Malayalam", sans-serif;
+    font-family: "Arima", system-ui;
     
 }
 /* hero */
@@ -29,6 +29,7 @@ body{
     background-size: cover; /* Ensures the image covers the entire div */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat;
+    border-radius: 0 0 0 50px;
 
     
     
@@ -80,5 +81,15 @@ body{
     font-family: "Arima", system-ui;
     font-size: 22px;
     color: white;
+    background-color: #ff5700;
+    margin-top: 15px;
+}
+#divider{
+    background-color: lightgrey;
+    width: 80%;
+    height: 1px;
+    margin-left: 10%;
+}
+#divider:hover{
     background-color: #ff5700;
 }
