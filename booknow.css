@@ -1,0 +1,39 @@
+#booknow-m-con {
+  position: relative;
+  width: 100%;
+  height: 300px; /* adjust as you like */
+  overflow: hidden;
+  border-radius: 50px 10px 50px 10px;
+  margin-bottom: 10px;
+}
+
+#booknow-m-con video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* zoom to fill */
+  transform: translate(-50%, -50%);
+}
+
+#booknow-btn {
+  position: absolute;
+  top: 50%;      /* vertical center */
+  left: 50%;     /* horizontal center */
+  transform: translate(-50%, -50%);  /* perfect centering */
+  background-color: transparent;
+  backdrop-filter: blur(10px);            /* blur background behind */
+  -webkit-backdrop-filter: blur(10px);    
+  border:2px #ff5700 solid;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 18px;
+  height: 60px;
+  width: 180px;
+  z-index: 2;  /* keep above video */
+}
+
+#booknow-btn:hover {
+  background-color: #ff5700;
+}
