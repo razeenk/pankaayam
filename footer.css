@@ -98,7 +98,7 @@
     margin: 0;
 }
 /* responsive */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
     #footer{
         height: 340px;
 

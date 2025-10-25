@@ -80,7 +80,7 @@
     font-family: "Manrope", sans-serif;
 }
 /* resposive */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
     #features-main-con{
         width: 100%;
         height: 1200px;
