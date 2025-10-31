@@ -1,0 +1,424 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap');
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+
+body{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+    background-color: #fcfaf8;
+    font-family: "Space Grotesk", "sans-serif";
+    height: 500vh;
+}
+/*header condainer */
+.main-condainer{
+    width: 70%;
+}
+.nav-condaniner{
+    width: 100%;
+    height: 13vh;
+    display: flex;
+    flex-direction: row;
+}
+.divider{
+    width: 100%;
+    height: .1rem;
+    background-color: #f4ece6;
+
+}
+.header-links-condainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.header-links{
+    padding-right: 25px;
+    font-size: medium;
+    text-decoration: none;
+    color: black;
+}
+.header-links:hover{
+    color: #f97306;
+}
+.header-button{
+    height: 5vh;
+    border-radius: 25px;
+    border-style: none;
+    background-color: #f97306;
+    color: #f4ece6;
+    font-weight: bold;
+    min-width: 100px;
+    max-width: 480px;
+    opacity: 1;
+}
+.header-button:hover{
+    opacity: .8;
+}
+.logo-condainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+}
+#header-name{
+    padding-left: 20px;
+}
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #f97306;
+  padding-right: 20px;
+  align-self: center;
+}
+/* hero */
+.hero-condainer{
+    width: 100%;
+    height: 73vh;
+    background-color: antiquewhite;
+    margin-top: 10vh;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url(assets/images/hero2.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+#hero-header{
+    font-size: 2.9em;
+    margin-left: .5em;
+    margin-right: .5em;
+    font-weight: bolder;
+    margin-bottom: .1em;
+}
+.hero-button{
+    background-color: #f97306;
+    height: 10%;
+    width: 15%;
+    border-radius: 25px;
+    border-style: none;
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+    opacity: 1;
+    margin-top: 1em;
+}
+.hero-button:hover{
+    opacity: .9;
+}
+/* features */
+.features{
+    height: 55vh;
+    width: 100%;
+    margin-top: 14.5vh;
+    display: flex;
+    flex-direction: column;
+
+}
+.features-text{
+    width: 80%;
+    height: 45%;
+    
+}
+.features-cards{
+    width: 100%;
+    height: 55%;
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+}
+.features-header{
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+.features-description{
+    font-size: large;
+    color: #374151;
+}
+.features-card{
+    height: 100%;
+    width: 32%;
+    border: 2px;
+    border-color: #e9dace;
+    border-radius: 20px;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+}
+.features-icon-condainer{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#card-icon{
+    margin-left: 5%;
+    font-size: 2.5rem;
+    color: #f97306;
+}
+.card-txt{
+    font-size: large;
+    margin: 0;
+    font-weight: bold;
+    margin-left: 5%;
+}
+.card-description{
+    margin-top: 2%;
+    margin-left: 5%;
+    color: #9e6e47;
+}
+/*rules*/
+.rules{
+    height: 50vh;
+    width: 100%;
+    margin-top: 10vh;
+}
+.rules-header-container{
+    width: 100%;
+    height: 35%;
+}
+.rules-header-text{
+    font-weight: bold;
+    margin: 0;
+}
+.rules-description-text{
+    font-size: large;
+    margin-top: .5em;
+}
+.rules-points{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: medium;
+}
+/* gallery */
+.gallery-main-condainer{
+    width: 100%;
+    height: 90vh;
+}
+.galley-head{
+    width: 100%;
+    height: 10vh;
+}
+.galley-head-text{
+    font-weight: bold;
+    margin: 0;
+}
+.gallery-img{
+    width: 35vh;
+    height: 35vh;
+    background-color: antiquewhite;
+    background: url(assets/images/hero.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+.gallery-img:hover{
+    transform: scale(1.05);
+}
+.gallery-image-condainer{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+}
+/*reviews*/
+.review-main-condainer{
+    width: 100%;
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+}
+.review-header-condainer{
+    width: 100%;
+    height: 25%;
+}
+.review-cards-condainer{
+    width: 100%;
+    height: 75%;
+    display: flex;
+    flex-direction: row;
+    gap: 1%;
+}
+.review-cards{
+    height: 100%;
+    width: 33%;
+    border: 2px;
+    border-color: #e9dace;
+    border-radius: 20px;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+}
+.review-details-condainer{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+}
+.review-body-condainer{
+    width: 100%;
+    height: 60%;
+}
+.profile-pic-condainer{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.profile-pic{
+    width: 60%;
+    height: 60%;
+    border-radius: 100%;
+    background-color: #f97306;
+}
+.profile-name-condainer{
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+.profile-name{
+    width: 100%;
+    height: 50%;
+}
+.review-star{
+    width: 100%;
+    height: 50%;
+}
+.profile-name-text{
+    font-size: medium;
+    font-weight: bold;
+}
+.review-star{
+    display: flex;
+    flex-direction: row;
+}
+#star{
+    font-size: medium;
+    color: #f97306;
+}
+.review-text{
+    margin-left: 3%;
+    font-size: medium;
+}
+#profile-pic-1{
+    background: url(assets/profile/profile-1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+#profile-pic-2{
+    background: url(assets/profile/profile-2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+#profile-pic-3{
+    background: url(assets/profile/profile-3.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+.footer-spacing{
+    width: 100%;
+    height: 15vh;
+}
+/*footer*/
+.footer-main-condainer{
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    flex-direction: row;
+}
+.footer-main-details-condainer{
+    height: 100%;
+    width: 50%;
+}
+.footer-links-condainer{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.contacts-condainer{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.footer-links{
+    text-decoration: none;
+    color: black;
+}
+.footer-links:hover{
+    color: #f97306;
+
+}
+.contanct-links{
+    color: black;
+    text-decoration: none;
+    gap: 20px;
+}
+.contanct-links:hover{
+    color: #f97306;
+}
+.footer-contact-condainer{
+    width: 100%;
+    height: 30%;
+    
+}
+.footer-social-condainer{
+    display: flex;
+    flex-direction: row;
+}
+.footer-list{
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+  row-gap: 20px;
+}
+.contact-li{
+    margin-top: 10px;
+}
+.footer-end{
+    justify-content: center;
+    text-align: center;
+    height: 5vh;
+}
+.footer-end-text{
+    font-size: .9em;
+    color: #9E9E9E;
+}
+.instagram{
+  height: 30px;
+  width: 30px;
+  margin-top: 0;
+}
+.footer-description{
+    font-size: 1em;
+    margin: 0;
+}

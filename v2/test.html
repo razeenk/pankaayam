@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pankayam Menu</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  background: #f4ece6;
+}
+
+/* Navbar container */
+.nav-condaniner {
+  width: 100%;
+  height: 13vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 10;
+}
+
+/* Logo */
+.logo-condainer h2 {
+  margin: 0;
+}
+
+/* Header links (desktop) */
+.header-links-condainer {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.header-links {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.header-links:hover {
+  color: #f97306;
+}
+
+.header-button {
+  background: #f97306;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.header-button:hover {
+  opacity: 0.8;
+}
+
+/* Hamburger icon */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  color: #f97306;
+  cursor: pointer;
+}
+
+/* MOBILE VIEW */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    z-index: 1001;
+  }
+
+  /* Hide links initially */
+  .header-links-condainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0,0,0,0.95);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+    z-index: 1000;
+  }
+
+  /* Show when active */
+  .header-links-condainer.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .header-links {
+    color: #fff;
+    font-size: 1.5rem;
+  }
+
+  .header-button {
+    width: 60%;
+    font-size: 1rem;
+  }
+}
+</style>
+</head>
+
+<body>
+  <div class="nav-condaniner">
+    <div class="logo-condainer">
+      <h2 id="header-name">Pankayam</h2>
+    </div>
+
+    <div class="hamburger" id="hamburger">☰</div>
+
+    <div class="header-links-condainer" id="nav-links">
+      <a class="header-links">Features</a>
+      <a class="header-links">Rules</a>
+      <a class="header-links">Gallery</a>
+      <a class="header-links">Reviews</a>
+      <button class="header-button">Book Now</button>
+    </div>
+  </div>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
